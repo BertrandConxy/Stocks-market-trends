@@ -1,0 +1,2 @@
+# Stocks-market-trends-
+This is a mobile-focused webapp to help people get the information updates at the stocks exchange market. It shows the real-time stock prices for various international companies like Apple, Microsoft and others. In addition, you can be able to check their annual financial statements history. Its data is consumed from Financial modeling prep API. It is built with React, Redux and React-bootstrap.
