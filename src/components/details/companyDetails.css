@@ -1,0 +1,15 @@
+.flex {
+    display: flex;
+}
+
+.details-container {
+ gap: 20px;
+}
+
+.image-container {
+    flex-flow: column;
+}
+
+.company-details {
+    flex-flow: column;
+}

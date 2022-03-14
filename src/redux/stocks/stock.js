@@ -1,15 +1,58 @@
 const LOAD_STOCK_DATA = 'stocks-market-trends/stocks/LOAD_STOCK_DATA';
+const LOAD_COMPANY_DETAILS = 'stocks-market-trends/stocks/LOAD_COMPANY_DETAILS';
+const LOAD_COMPANY_STATEMENTS = 'stocks-market-trends/stocks/LOAD_COMPANY_STATEMENTS';
+const FILTER_COMPANY = "stocks-market-trends/stocks/FILTER_COMPANY";
 const endpoint = 'https://financialmodelingprep.com/api/v3/';
 const apiKey = 'e528de4fe03aeb75adc32ec89784f643';
 
 const initialState = {
   stocksData: [],
+  details: [],
+  statement: [],
+  filtered: [],
 };
 
 const loadStockData = (payload) => ({
   type: LOAD_STOCK_DATA,
   payload,
 });
+
+const loadCompanyDetails = (payload) => ({
+  type: LOAD_COMPANY_DETAILS,
+  payload,
+});
+
+const loadCompanyStatement = (payload) => ({
+  type: LOAD_COMPANY_STATEMENTS,
+  payload,
+});
+
+export const filterCompany = (payload) => ({
+  type: FILTER_COMPANY,
+  payload,
+})
+
+export const fetchCompanyDetails = (companyId) => async (dispatch) => {
+  try {
+    const response = await fetch(`${endpoint}profile/${companyId}?apikey=${apiKey}`);
+    const result = await response.json();
+    dispatch(loadCompanyDetails(result));
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+
+export const fetchCompanyStatements = (companyId) => async (dispatch) => {
+  try {
+    const response = await fetch(
+      `${endpoint}income-statement/${companyId}?limit=120&apikey=${apiKey}`,
+    );
+    const result = await response.json();
+    dispatch(loadCompanyStatement(result));
+  } catch (err) {
+    throw new Error(err);
+  }
+};
 
 export const fetchStockData = () => async (dispatch) => {
   try {
@@ -35,6 +78,22 @@ const stocksDataReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case LOAD_STOCK_DATA:
       return { ...state, stocksData: [...payload] };
+
+    case LOAD_COMPANY_DETAILS:
+      return { ...state, details: [...payload] };
+
+    case LOAD_COMPANY_STATEMENTS:
+      return { ...state, statement: [...payload] };
+    case FILTER_COMPANY:
+      if (payload === '') {
+        return {...state, filtered: [...state.stocksData]}
+      }
+      return {
+        ...state,
+        filtered: [
+          ...state.stocksData.filter(({companyName})=> companyName.toLowerCase().includes(payload.toLowerCase()))
+        ]
+      }
 
     default:
       return state;
