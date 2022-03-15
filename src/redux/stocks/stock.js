@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const LOAD_STOCK_DATA = 'stocks-market-trends/stocks/LOAD_STOCK_DATA';
 const LOAD_COMPANY_DETAILS = 'stocks-market-trends/stocks/LOAD_COMPANY_DETAILS';
 const LOAD_COMPANY_STATEMENTS = 'stocks-market-trends/stocks/LOAD_COMPANY_STATEMENTS';
