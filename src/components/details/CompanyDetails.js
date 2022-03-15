@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchCompanyDetails, fetchCompanyStatements } from '../../redux/stocks/stock';
+import { BsArrowLeftSquareFill } from 'react-icons/bs';
+import { fetchCompanyDetails, fetchCompanyStatements, resetStock } from '../../redux/stocks/stock';
 import './companyDetails.css';
-
+import SkeletonLoader from '../loader/SkeletonLoader';
 
 const CompanyDetails = () => {
   const dispatch = useDispatch();
@@ -17,8 +18,23 @@ const CompanyDetails = () => {
     dispatch(fetchCompanyDetails(companyId));
     dispatch(fetchCompanyStatements(companyId));
   }, [companyId]);
+
+  const clickHandler = () => {
+    dispatch(resetStock())
+  }
+
+  if (detailsState.length === 0 || statementState.length === 0 ) {
+    return (
+      <SkeletonLoader/>
+    )
+  }
   return (
     <>
+      <Link to={`/`} onClick={clickHandler}>
+        <div>
+          <BsArrowLeftSquareFill />
+        </div>
+      </Link>
       <section className="details-section">
         {detailsState.map(
           ({
@@ -81,37 +97,41 @@ const CompanyDetails = () => {
         )}
       </section>
       <section>
-          <h2>Financial statements report</h2>
-          <table>
-              <tbody>
-                  <tr>
-                      <th>Reported year</th>
-                      <th>Income statement</th>
-                  </tr>
-                  {statementState.map(({
-                      revenue,
-                      grossProfit,
-                      grossProfitRatio,
-                      netIncome,
-                      netIncomeRatio,
-                      calendarYear,
-                  })=>(
-                      <tr key={companyId}>
-                          <td>{calendarYear}</td>
-                          <td>
-                              <span>Revenue: {`${revenue}$`}</span>
-                              <span>grossProfit: {`${grossProfit}$`}</span>
-                              <span>Net income: {`${netIncome}$`}</span>
-                              <span>Gross Profit Ratio: {`${grossProfitRatio}`}</span>
-                              <span>Net Income Ratio: {`${netIncomeRatio}`}</span>
-                          </td>
-                      </tr>
-                  ))}
-              </tbody>
-          </table>
+        <h2>Financial statements report</h2>
+        <table>
+          <tbody>
+            <tr>
+              <th>Reported year</th>
+              <th>Income statement</th>
+            </tr>
+            {statementState.map(
+              ({
+                revenue,
+                grossProfit,
+                grossProfitRatio,
+                netIncome,
+                netIncomeRatio,
+                calendarYear,
+              }) => (
+                <tr key={companyId}>
+                  <td>{calendarYear}</td>
+                  <td>
+                    <span>Revenue: {`${revenue}$`}</span>
+                    <span>grossProfit: {`${grossProfit}$`}</span>
+                    <span>Net income: {`${netIncome}$`}</span>
+                    <span>Gross Profit Ratio: {`${grossProfitRatio}`}</span>
+                    <span>Net Income Ratio: {`${netIncomeRatio}`}</span>
+                  </td>
+                </tr>
+              )
+            )}
+          </tbody>
+        </table>
       </section>
     </>
   );
 };
 
 export default CompanyDetails;
+
+

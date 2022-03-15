@@ -2,6 +2,7 @@ const LOAD_STOCK_DATA = 'stocks-market-trends/stocks/LOAD_STOCK_DATA';
 const LOAD_COMPANY_DETAILS = 'stocks-market-trends/stocks/LOAD_COMPANY_DETAILS';
 const LOAD_COMPANY_STATEMENTS = 'stocks-market-trends/stocks/LOAD_COMPANY_STATEMENTS';
 const FILTER_COMPANY = "stocks-market-trends/stocks/FILTER_COMPANY";
+const RESET_STOCK = "stocks-market-trends/stocks/RESET_STOCK";
 const endpoint = 'https://financialmodelingprep.com/api/v3/';
 const apiKey = 'e528de4fe03aeb75adc32ec89784f643';
 
@@ -30,6 +31,10 @@ const loadCompanyStatement = (payload) => ({
 export const filterCompany = (payload) => ({
   type: FILTER_COMPANY,
   payload,
+});
+
+export const resetStock = () => ({
+  type: RESET_STOCK,
 })
 
 export const fetchCompanyDetails = (companyId) => async (dispatch) => {
@@ -84,16 +89,20 @@ const stocksDataReducer = (state = initialState, { type, payload }) => {
 
     case LOAD_COMPANY_STATEMENTS:
       return { ...state, statement: [...payload] };
+    case RESET_STOCK:
+      return { ...state, statement: [], details: [] };
     case FILTER_COMPANY:
-      if (payload === '') {
-        return {...state, filtered: [...state.stocksData]}
+      if (payload === "") {
+        return { ...state, filtered: [...state.stocksData] };
       }
       return {
         ...state,
         filtered: [
-          ...state.stocksData.filter(({companyName})=> companyName.toLowerCase().includes(payload.toLowerCase()))
-        ]
-      }
+          ...state.stocksData.filter(({ companyName }) =>
+            companyName.toLowerCase().includes(payload.toLowerCase())
+          ),
+        ],
+      };
 
     default:
       return state;
