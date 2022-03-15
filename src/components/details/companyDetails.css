@@ -13,3 +13,8 @@
 .company-details {
     flex-flow: column;
 }
+
+.statement-data {
+    display: grid;
+    grid-template-columns: auto auto;
+}

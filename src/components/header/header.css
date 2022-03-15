@@ -7,3 +7,7 @@ header {
 .icons-container {
     display: flex;
 }
+
+.navbar {
+    background-color: #2b4064;
+}

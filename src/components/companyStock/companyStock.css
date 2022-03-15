@@ -4,7 +4,9 @@
 }
 
 .card {
-    display: flex;
-    flex-flow: column;
-    border: 1px solid black;
+    background-color: #355286;
+}
+
+.card-img {
+    opacity: 0.5;
 }

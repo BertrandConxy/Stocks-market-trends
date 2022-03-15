@@ -1,15 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
-import Header from './components/header/Header';
-import CompanyStock from './components/home/CompanyStock';
-import CompanyDetails from './components/details/CompanyDetails';
+import Home from './pages/Home';
+import Details from './pages/Details';
 
 function App() {
   return (
     <div className="App">
-      <Header />
       <Routes>
-        <Route exact path="/" element={<CompanyStock />} />
-        <Route path="/details/:companyId" element={<CompanyDetails />} />
+        <Route exact path="/" element={<Home />} />
+        <Route path="/details/:companyId" element={<Details />} />
       </Routes>
     </div>
   );

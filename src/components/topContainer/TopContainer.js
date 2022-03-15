@@ -1,78 +1,57 @@
-import React from 'react';
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Carousel } from 'react-bootstrap';
+import React, { useEffect } from 'react';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { Carousel, Card } from 'react-bootstrap';
 // import { Link } from "react-router-dom";
-import { fetchStockData } from "../../redux/stocks/stock";
-import Ford from '../../images/Ford.png';
-import Apple from '../../images/Apple.png';
-import AMD from '../../images/AMD.jpg';
-import SoFi from '../../images/SoFi.jpg';
+import { FaLongArrowAltDown, FaLongArrowAltUp } from 'react-icons/fa';
+import { fetchStockData } from '../../redux/stocks/stock';
+import Bg from '../../images/top-bg.png';
+import './topContainer.css';
 
 const TopContainer = () => {
-     const stockState = useSelector(
-       (state) => state.stocksDataReducer.stocksData
-     );
-    const mostActive = stockState.slice(0,4);
-    console.log(mostActive);
-    const dispatch = useDispatch();
-      useEffect(() => {
-          dispatch(fetchStockData());
-      }, []);
+  const stockState = useSelector((state) => state.stocksDataReducer.stocksData);
+  const mostActive = stockState.slice(0, 4);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchStockData());
+  }, []);
 
   return (
     <section>
-      <Carousel>
-        <Carousel.Item>
-          <img className="d-block w-100" src={Ford} alt="First slide" />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={Apple}
-            alt="Second slide"
-          />
-
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={AMD}
-            alt="Third slide"
-          />
-
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={SoFi}
-            alt="Third slide"
-          />
-
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
+      <Carousel className="mt-3 position-relative">
+        {mostActive.map(
+          ({
+            id, change, companyName, price, changesPercentage,
+          }) => (
+            <Carousel.Item key={id}>
+              <Card className="bg-dark text-white">
+                <Card.Img src={Bg} alt="Card image" />
+                <Card.ImgOverlay className="text-center align-center d-flex flex-column  justify-content-center">
+                  <Card.Title>{companyName}</Card.Title>
+                  <Card.Text>
+                    <span>
+                      <strong>Price:</strong>
+                      {' '}
+                      {`${price}$`}
+                    </span>
+                    <span>
+                      <FaLongArrowAltUp className="text-success" />
+                      {changesPercentage}
+                    </span>
+                    <span>
+                      <FaLongArrowAltDown className="text-danger" />
+                      {change}
+                    </span>
+                  </Card.Text>
+                  <Card.Text>Last updated 20 hours ago</Card.Text>
+                </Card.ImgOverlay>
+              </Card>
+            </Carousel.Item>
+          ),
+        )}
       </Carousel>
     </section>
   );
-}
+};
 
-export default TopContainer
+export default TopContainer;

@@ -1,10 +1,10 @@
 const LOAD_STOCK_DATA = 'stocks-market-trends/stocks/LOAD_STOCK_DATA';
 const LOAD_COMPANY_DETAILS = 'stocks-market-trends/stocks/LOAD_COMPANY_DETAILS';
 const LOAD_COMPANY_STATEMENTS = 'stocks-market-trends/stocks/LOAD_COMPANY_STATEMENTS';
-const FILTER_COMPANY = "stocks-market-trends/stocks/FILTER_COMPANY";
-const RESET_STOCK = "stocks-market-trends/stocks/RESET_STOCK";
+const FILTER_COMPANY = 'stocks-market-trends/stocks/FILTER_COMPANY';
+const RESET_STOCK = 'stocks-market-trends/stocks/RESET_STOCK';
 const endpoint = 'https://financialmodelingprep.com/api/v3/';
-const apiKey = 'e528de4fe03aeb75adc32ec89784f643';
+const apiKey = 'ddf8f182e284649cacf38622ddf293c3';
 
 const initialState = {
   stocksData: [],
@@ -35,11 +35,13 @@ export const filterCompany = (payload) => ({
 
 export const resetStock = () => ({
   type: RESET_STOCK,
-})
+});
 
 export const fetchCompanyDetails = (companyId) => async (dispatch) => {
   try {
-    const response = await fetch(`${endpoint}profile/${companyId}?apikey=${apiKey}`);
+    const response = await fetch(
+      `${endpoint}profile/${companyId}?apikey=${apiKey}`,
+    );
     const result = await response.json();
     dispatch(loadCompanyDetails(result));
   } catch (err) {
@@ -61,17 +63,21 @@ export const fetchCompanyStatements = (companyId) => async (dispatch) => {
 
 export const fetchStockData = () => async (dispatch) => {
   try {
-    const response = await fetch(`${endpoint}stock_market/actives?limit=20&apikey=${apiKey}`);
+    const response = await fetch(
+      `${endpoint}stock_market/actives?limit=20&apikey=${apiKey}`,
+    );
     const result = await response.json();
-    const data = result.map(({
-      symbol, name, change, price, changesPercentage,
-    }) => ({
-      id: symbol,
-      change,
-      companyName: name,
-      price,
-      changesPercentage,
-    }));
+    const data = result.map(
+      ({
+        symbol, name, change, price, changesPercentage,
+      }) => ({
+        id: symbol,
+        change,
+        companyName: name,
+        price,
+        changesPercentage,
+      }),
+    );
 
     dispatch(loadStockData(data));
   } catch (err) {
@@ -92,15 +98,13 @@ const stocksDataReducer = (state = initialState, { type, payload }) => {
     case RESET_STOCK:
       return { ...state, statement: [], details: [] };
     case FILTER_COMPANY:
-      if (payload === "") {
+      if (payload === '') {
         return { ...state, filtered: [...state.stocksData] };
       }
       return {
         ...state,
         filtered: [
-          ...state.stocksData.filter(({ companyName }) =>
-            companyName.toLowerCase().includes(payload.toLowerCase())
-          ),
+          ...state.stocksData.filter(({ companyName }) => companyName.toLowerCase().includes(payload.toLowerCase())),
         ],
       };
 
