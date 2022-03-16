@@ -18,7 +18,7 @@
 # Presentation video
 [Loom video link](https://www.loom.com/share/31ffe7df3df54f7ca8ab5d85c346a271)
 
-Additional description about the project and its features.
+Additional description about the project and its features are below.
 
 ## Built With
 
