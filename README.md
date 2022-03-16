@@ -25,6 +25,8 @@ Additional description about the project and its features.
 - Frameworks / Libraries
   ```bash
   - React (Front end library)
+  - React Bootstrap
+  - React icons
   - React Testing Library
   - Jest(for testing)
   - Git(version control)
@@ -68,7 +70,7 @@ $ npm start
 
 #### Open page in browser
 ```bash
-$ runs on http://localhost:3001/
+$ runs on http://localhost:3000/
 ```
 
 ## Author
