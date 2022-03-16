@@ -14,7 +14,7 @@ const Footer = () => (
         <ul className="d-flex">
           <li className="mx-2">
             <a
-              href="https://github.com"
+              href="https://github.com/BertrandConxy/"
               target="_blank"
               rel="noreferrer"
               className="text-white"
@@ -24,7 +24,7 @@ const Footer = () => (
           </li>
           <li className="mx-2">
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/bertrandmutangana"
               target="_blank"
               rel="noreferrer"
               className="text-white"
@@ -34,7 +34,7 @@ const Footer = () => (
           </li>
           <li className="mx-2">
             <a
-              href="https://twitter.com"
+              href="https://twitter.com/BertrandMutanga"
               target="_blank"
               rel="noreferrer"
               className="text-white"
