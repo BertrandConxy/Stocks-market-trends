@@ -34,16 +34,18 @@ const CompanyDetails = () => {
     <>
       <header>
         <Container>
-          <Navbar expand="lg" variant="dark" bg="primary">
+          <Navbar expand="lg" variant="dark">
             <Container>
               <Link to="/" onClick={clickHandler}>
                 <div className="display-6 text-white">
                   <BsArrowLeftSquareFill />
                 </div>
               </Link>
-              <Navbar.Brand href="#" className="text-white">
-                Company Details
-              </Navbar.Brand>
+              <h2>
+                <Navbar.Brand href="#" className="text-white">
+                  Company Details
+                </Navbar.Brand>
+              </h2>
             </Container>
           </Navbar>
         </Container>

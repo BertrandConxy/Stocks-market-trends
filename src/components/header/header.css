@@ -1,13 +1,14 @@
 
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
 .icons-container {
-    display: flex;
+  display: flex;
 }
 
 .navbar {
-    background-color: #2b4064;
+  background-color: #2b4064;
 }

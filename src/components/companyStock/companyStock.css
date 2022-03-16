@@ -1,17 +1,17 @@
 .companyListing {
-    display: grid;
-    grid-template-columns: auto auto;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
 .card {
-    background-color: #355286;
+  background-color: #355286;
 }
 
 .card-img {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .right-side {
-    position: absolute;
-    right: 0;
+  position: absolute;
+  right: 0;
 }

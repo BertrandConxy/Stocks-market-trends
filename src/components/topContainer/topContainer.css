@@ -1,41 +1,17 @@
 .carousel-caption {
-    font-size: 10px;
+  font-size: 10px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media screen and (min-width: 600px) {
-    .carousel-caption {
-        bottom: 5rem ;
-        font-size: 1rem;
-    }
+  .carousel-caption {
+    bottom: 5rem;
+    font-size: 1rem;
+  }
 }
+
 @media screen and (min-width: 800px) {
-    .carousel-caption {
-        bottom: 10rem ;
-        font-size: 1rem;
-    }
+  .carousel-caption {
+    bottom: 10rem;
+    font-size: 1rem;
+  }
 }

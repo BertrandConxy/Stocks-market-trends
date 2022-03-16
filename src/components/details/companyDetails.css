@@ -1,20 +1,24 @@
 .flex {
-    display: flex;
+  display: flex;
 }
 
 .details-container {
- gap: 20px;
+  gap: 20px;
 }
 
 .image-container {
-    flex-flow: column;
+  flex-flow: column;
 }
 
 .company-details {
-    flex-flow: column;
+  flex-flow: column;
 }
 
 .statement-data {
-    display: grid;
-    grid-template-columns: auto auto;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.navbar {
+  background-color: #2b4064;
 }
