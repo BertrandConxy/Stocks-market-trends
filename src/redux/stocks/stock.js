@@ -14,17 +14,17 @@ const initialState = {
   filtered: [],
 };
 
-const loadStockData = (payload) => ({
+export const loadStockData = (payload) => ({
   type: LOAD_STOCK_DATA,
   payload,
 });
 
-const loadCompanyDetails = (payload) => ({
+export const loadCompanyDetails = (payload) => ({
   type: LOAD_COMPANY_DETAILS,
   payload,
 });
 
-const loadCompanyStatement = (payload) => ({
+export const loadCompanyStatement = (payload) => ({
   type: LOAD_COMPANY_STATEMENTS,
   payload,
 });

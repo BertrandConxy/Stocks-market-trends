@@ -141,32 +141,32 @@ const CompanyDetails = () => {
                     >
                       <span>
                         <strong>Revenue:</strong>
-&nbsp;
+                        &nbsp;
                         {`${revenue}$`}
                       </span>
                       <span>
                         <strong>GrossProfit:</strong>
-&nbsp;
+                        &nbsp;
                         {`${grossProfit}$`}
                       </span>
                       <span>
                         <strong>Net income:</strong>
-&nbsp;
+                        &nbsp;
                         {`${netIncome}$`}
                       </span>
                       <span>
                         <strong>Gross Profit Ratio:</strong>
-&nbsp;
+                        &nbsp;
                         {`${grossProfitRatio}`}
                       </span>
                       <span>
                         <strong>Net Income Ratio:</strong>
-&nbsp;
+                        &nbsp;
                         {`${netIncomeRatio}`}
                       </span>
                       <span>
                         <strong>Operating Income Ratio:</strong>
-&nbsp;
+                        &nbsp;
                         {`${operatingIncomeRatio}`}
                       </span>
                     </td>
