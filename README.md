@@ -5,6 +5,14 @@
 
 # Screenshoot
 
+## Mobile-First
+![stock-market-trends](https://user-images.githubusercontent.com/90222110/158610453-7f7abc7e-06ec-4274-b16e-fcdb88a8dec8.png)
+
+## Desktop view
+
+![SMT-desktop](https://user-images.githubusercontent.com/90222110/158610606-20389997-4b2d-4470-a9b4-b4d9142e4b91.png)
+
+
 # Live demo
 # Presentation video
 
@@ -17,6 +25,8 @@ Additional description about the project and its features.
 - Frameworks / Libraries
   ```bash
   - React (Front end library)
+  - React Bootstrap
+  - React icons
   - React Testing Library
   - Jest(for testing)
   - Git(version control)
@@ -60,7 +70,7 @@ $ npm start
 
 #### Open page in browser
 ```bash
-$ runs on http://localhost:3001/
+$ runs on http://localhost:3000/
 ```
 
 ## Author
