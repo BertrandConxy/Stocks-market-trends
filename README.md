@@ -16,7 +16,7 @@
 # Live demo
 [Stock market trends website](https://stockmarkettrends.netlify.app/)
 # Presentation video
-[Loom videolink](https://www.loom.com/share/31ffe7df3df54f7ca8ab5d85c346a271)
+[Loom video link](https://www.loom.com/share/31ffe7df3df54f7ca8ab5d85c346a271)
 
 Additional description about the project and its features.
 
