@@ -1,11 +1,10 @@
-/* eslint-disable max-len */
 const LOAD_STOCK_DATA = 'stocks-market-trends/stocks/LOAD_STOCK_DATA';
 const LOAD_COMPANY_DETAILS = 'stocks-market-trends/stocks/LOAD_COMPANY_DETAILS';
 const LOAD_COMPANY_STATEMENTS = 'stocks-market-trends/stocks/LOAD_COMPANY_STATEMENTS';
 const FILTER_COMPANY = 'stocks-market-trends/stocks/FILTER_COMPANY';
 const RESET_STOCK = 'stocks-market-trends/stocks/RESET_STOCK';
 const endpoint = 'https://financialmodelingprep.com/api/v3/';
-const apiKey = 'ddf8f182e284649cacf38622ddf293c3';
+const apiKey = 'e528de4fe03aeb75adc32ec89784f643';
 
 const initialState = {
   stocksData: [],
@@ -105,7 +104,8 @@ const stocksDataReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         filtered: [
-          ...state.stocksData.filter(({ companyName }) => companyName.toLowerCase().includes(payload.toLowerCase())),
+          ...state.stocksData.filter(({ companyName }) => companyName
+            .toLowerCase().includes(payload.toLowerCase())),
         ],
       };
 

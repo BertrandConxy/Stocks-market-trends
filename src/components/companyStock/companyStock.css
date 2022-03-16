@@ -3,8 +3,21 @@
   grid-template-columns: auto auto;
 }
 
-.card {
-  background-color: #355286;
+.alternate {
+  background-color: #2b4472;
+}
+
+.alternate:nth-child(2),
+.alternate:nth-child(7),
+.alternate:nth-child(12),
+.alternate:nth-child(13),
+.alternate:nth-child(19),
+.alternate:nth-child(25) {
+  background-color: #162c55;
+}
+
+.alternate:nth-child(3n+0) {
+  background-color: #162c55;
 }
 
 .card-img {
