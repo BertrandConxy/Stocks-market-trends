@@ -2,8 +2,9 @@ input {
   height: 30px;
   width: inherit;
   border: 1px solid #3264af;
-  margin: 1rem 0.5rem;
-  border-radius: 10px;
+  margin-top: 1rem;
+  border-radius: 4px;
+  padding: 0 12px;
 }
 
 ::placeholder {

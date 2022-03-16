@@ -17,6 +17,7 @@ const Search = () => {
     <>
       <input
         id="search"
+        className="px-2"
         placeholder="Search a company..."
         value={searchInput}
         type="search"

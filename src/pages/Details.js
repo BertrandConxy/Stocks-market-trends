@@ -1,8 +1,11 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import CompanyDetails from '../components/details/CompanyDetails';
 
 const Details = () => (
-  <CompanyDetails />
+  <Container className="p-0">
+    <CompanyDetails />
+  </Container>
 );
 
 export default Details;

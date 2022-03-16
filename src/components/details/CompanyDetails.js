@@ -114,67 +114,68 @@ const CompanyDetails = () => {
       <section className="m-4">
         <Container>
           <h2 className="text-center">Financial statements report</h2>
-
-          <Table striped bordered hover variant="dark">
-            <thead>
-              <tr>
-                <th>Reported Year</th>
-                <th>Income statement</th>
-              </tr>
-            </thead>
-            <tbody>
-              {statementState.map(
-                ({
-                  revenue,
-                  grossProfit,
-                  grossProfitRatio,
-                  netIncome,
-                  netIncomeRatio,
-                  calendarYear,
-                  operatingIncomeRatio,
-                }) => (
-                  <tr key={companyId}>
-                    <td>{calendarYear}</td>
-                    <td
-                      className="statement-data"
-                      key={`${companyId}statement`}
-                    >
-                      <span>
-                        <strong>Revenue:</strong>
-                        &nbsp;
-                        {`${revenue}$`}
-                      </span>
-                      <span>
-                        <strong>GrossProfit:</strong>
-                        &nbsp;
-                        {`${grossProfit}$`}
-                      </span>
-                      <span>
-                        <strong>Net income:</strong>
-                        &nbsp;
-                        {`${netIncome}$`}
-                      </span>
-                      <span>
-                        <strong>Gross Profit Ratio:</strong>
-                        &nbsp;
-                        {`${grossProfitRatio}`}
-                      </span>
-                      <span>
-                        <strong>Net Income Ratio:</strong>
-                        &nbsp;
-                        {`${netIncomeRatio}`}
-                      </span>
-                      <span>
-                        <strong>Operating Income Ratio:</strong>
-                        &nbsp;
-                        {`${operatingIncomeRatio}`}
-                      </span>
-                    </td>
-                  </tr>
-                ),
-              )}
-            </tbody>
-          </Table>
+          <Container>
+            <Table striped bordered hover variant="dark">
+              <thead>
+                <tr>
+                  <th>Reported Year</th>
+                  <th>Income statement</th>
+                </tr>
+              </thead>
+              <tbody>
+                {statementState.map(
+                  ({
+                    revenue,
+                    grossProfit,
+                    grossProfitRatio,
+                    netIncome,
+                    netIncomeRatio,
+                    calendarYear,
+                    operatingIncomeRatio,
+                  }) => (
+                    <tr key={companyId}>
+                      <td>{calendarYear}</td>
+                      <td
+                        className="statement-data"
+                        key={`${companyId}statement`}
+                      >
+                        <span>
+                          <strong>Revenue:</strong>
+                          &nbsp;
+                          {`${revenue}$`}
+                        </span>
+                        <span>
+                          <strong>GrossProfit:</strong>
+                          &nbsp;
+                          {`${grossProfit}$`}
+                        </span>
+                        <span>
+                          <strong>Net income:</strong>
+                          &nbsp;
+                          {`${netIncome}$`}
+                        </span>
+                        <span>
+                          <strong>Gross Profit Ratio:</strong>
+                          &nbsp;
+                          {`${grossProfitRatio}`}
+                        </span>
+                        <span>
+                          <strong>Net Income Ratio:</strong>
+                          &nbsp;
+                          {`${netIncomeRatio}`}
+                        </span>
+                        <span>
+                          <strong>Operating Income Ratio:</strong>
+                          &nbsp;
+                          {`${operatingIncomeRatio}`}
+                        </span>
+                      </td>
+                    </tr>
+                  ),
+                )}
+              </tbody>
+            </Table>
+          </Container>
         </Container>
       </section>
     </>
