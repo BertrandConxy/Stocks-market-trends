@@ -58,8 +58,8 @@ To get a local copy up and running follow these simple example steps.
 #### Clone this repository
 
 ```bash
-$ git@github.com:clintonjosephs/Stock-metrics.git
-$ cd Stock-metrics
+$ git@github.com:BertrandConxy.Stocks-market-trends.git
+$ cd Stocks-market-trends
 ```
 #### Run project
 
