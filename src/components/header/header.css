@@ -10,5 +10,5 @@ header {
 }
 
 .navbar {
-  background-color: #2b4064;
+  background-color: var(--color-primary-light);
 }
