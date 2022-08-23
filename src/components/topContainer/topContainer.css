@@ -1,8 +1,9 @@
 .carousel-caption {
-  font-size: .5rem;
+  font-size: 0.5rem;
 }
 
-.carousel-control-next-icon, .carousel-control-prev-icon {
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
   display: none;
 }
 

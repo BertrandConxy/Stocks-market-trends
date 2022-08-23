@@ -24,7 +24,6 @@
 }
 
 @media screen and (max-width: 568px) {
-
   .company-details {
     font-size: 1.3rem;
   }
@@ -32,6 +31,7 @@
   .statements-section {
     font-size: 1.1rem;
   }
+
   .details-container {
     flex-flow: column;
   }

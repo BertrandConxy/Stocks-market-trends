@@ -40,7 +40,8 @@
 }
 
 @media screen and (max-width: 375px) {
-  .span-paragraph, .span-paragraph > span {
+  .span-paragraph,
+  .span-paragraph > span {
     display: none;
   }
 }
