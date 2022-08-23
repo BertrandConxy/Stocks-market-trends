@@ -113,11 +113,11 @@ const CompanyDetails = () => {
           ),
         )}
       </section>
-      <section className="m-4">
+      <section className="statements-section m-4">
         <Container>
           <h2 className="text-center">Financial statements report</h2>
           <Container>
-            <Table striped bordered hover variant="dark">
+            <Table striped bordered hover variant="dark" responsive>
               <thead>
                 <tr>
                   <th>Reported Year</th>
