@@ -22,3 +22,19 @@
 .navbar {
   background-color: #2b4064;
 }
+
+@media screen and (max-width: 568px) {
+
+  .company-details {
+    font-size: 1rem;
+  }
+  .details-container {
+    flex-flow: column;
+  }
+
+  .image-container {
+    flex-flow: row;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+}
