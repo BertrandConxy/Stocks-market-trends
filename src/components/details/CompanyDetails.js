@@ -64,60 +64,60 @@ const CompanyDetails = () => {
             website,
             volAvg: volatility,
           }) => (
-            <Container key={companyId}>
+            <Container key={companyId} className="my-4">
               <div className="details-container flex">
                 <div className="image-container flex">
                   <div>
                     <img src={image} alt="company" />
                   </div>
-                  <div>
-                    <h6>
+                  <div className="fs-4">
+                    <span className="d-block fw-bold">
                       Country:&nbsp;
                       {country}
-                    </h6>
-                    <h6>
+                    </span>
+                    <span className="d-block fw-bold">
                       City:&nbsp;
                       {city}
-                    </h6>
-                    <h6>
+                    </span>
+                    <span className="d-block fw-bold">
                       Currency:&nbsp;
                       {currency}
-                    </h6>
+                    </span>
                   </div>
                 </div>
                 <div className="company-details flex">
-                  <h2>{companyName}</h2>
-                  <h3>
+                  <h2 className="fs-1 mb-4">{companyName}</h2>
+                  <span className="fw-bold mb-4 fs-3">
                     CEO:&nbsp;
                     {ceo}
-                  </h3>
-                  <h4>Description:</h4>
+                  </span>
+                  <span className="fw-bold mb-4 fs-3">Description:</span>
                   <p>{description}</p>
-                  <h4>
+                  <span className="fw-bold mb-4 fs-3">
                     Industry:&nbsp;
                     <span>{industry}</span>
-                  </h4>
-                  <h4>
+                  </span>
+                  <span className="fw-bold mb-4 fs-3">
                     Website:&nbsp;
                     <a href={website} target="_blank" rel="noreferrer">
                       Visit website
                     </a>
-                  </h4>
-                  <h4>
+                  </span>
+                  <span className="fw-bold mb-4 fs-3">
                     Stock volatility:&nbsp;
                     <span>{volatility}</span>
-                  </h4>
+                  </span>
                 </div>
               </div>
             </Container>
           ),
         )}
       </section>
-      <section className="m-4">
+      <section className="statements-section m-4">
         <Container>
           <h2 className="text-center">Financial statements report</h2>
           <Container>
-            <Table striped bordered hover variant="dark">
+            <Table striped bordered hover variant="dark" responsive>
               <thead>
                 <tr>
                   <th>Reported Year</th>

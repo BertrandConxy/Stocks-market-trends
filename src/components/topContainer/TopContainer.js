@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { Carousel, Card } from 'react-bootstrap';
-// import { Link } from "react-router-dom";
 import { FaLongArrowAltDown, FaLongArrowAltUp } from 'react-icons/fa';
 import { fetchStockData } from '../../redux/stocks/stock';
 import Bg from '../../images/top-bg.png';

@@ -1,5 +1,10 @@
 .carousel-caption {
-  font-size: 10px;
+  font-size: 0.5rem;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  display: none;
 }
 
 @media screen and (min-width: 600px) {

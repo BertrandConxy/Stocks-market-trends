@@ -3,6 +3,10 @@
   grid-template-columns: auto auto;
 }
 
+.card-text {
+  font-size: var(--default-fs);
+}
+
 .alternate {
   background-color: #2b4472;
 }
@@ -27,4 +31,17 @@
 .right-side {
   position: absolute;
   right: 0;
+}
+
+@media screen and (max-width: 475px) {
+  .card-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .span-paragraph,
+  .span-paragraph > span {
+    display: none;
+  }
 }
