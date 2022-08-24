@@ -33,7 +33,7 @@ const CompanyStock = () => {
               ({
                 id, change, companyName, price, changesPercentage,
               }) => (
-                <Card className="text-white alternate" key={id}>
+                <Card className="text-white alternate card" key={id}>
                   <Link to={`/details/${id}`} key={`${id}link`} className="text-white">
                     <Card.Img src={Chart} alt="Card image" />
                     <Card.ImgOverlay className="text-center align-center d-flex flex-column  justify-content-center">
@@ -73,27 +73,27 @@ const CompanyStock = () => {
               ({
                 id, change, companyName, price, changesPercentage,
               }) => (
-                <Card className=" p-3 text-white alternate" key={id}>
+                <Card className=" p-1 text-white alternate card" key={id}>
                   <Link to={`/details/${id}`} key={id} className="text-white">
                     <Card.Img src={Chart} alt="Card image" />
                     <Card.ImgOverlay className=" align-center d-flex flex-column  justify-content-start">
-                      <Card.Title className="h3">{companyName}</Card.Title>
+                      <Card.Title className="h2 fs-2 p-1 fw-bold">{companyName}</Card.Title>
                       <Card.Text>
-                        <span className=" bg-dark text-white p-2 text-center">
+                        <span className=" bg-dark text-white p-1 text-center">
                           {id}
                         </span>
                       </Card.Text>
-                      <Card.Text className="d-flex flex-column">
-                        <span>
+                      <Card.Text className="d-flex flex-column m-0">
+                        <span className="span-paragraph">
                           <strong>Price:</strong>
                           {' '}
                           {`${price}$`}
                         </span>
-                        <span>
+                        <span className="span-paragraph">
                           <FaLongArrowAltUp className="text-success" />
                           {changesPercentage}
                         </span>
-                        <span>
+                        <span className="span-paragraph">
                           <FaLongArrowAltDown className="text-danger" />
                           {change}
                         </span>
@@ -103,7 +103,7 @@ const CompanyStock = () => {
                           <FiArrowRightCircle className="text-white m-2 h3" />
                         </span>
                       </Card.Text>
-                      <Card.Text>Last updated 20 hours ago</Card.Text>
+                      <Card.Text className="span-paragraph">Last updated 20 hours ago</Card.Text>
                     </Card.ImgOverlay>
                   </Link>
                 </Card>
