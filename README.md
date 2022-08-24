@@ -1,9 +1,9 @@
 ![](https://img.shields.io/badge/StocksMarketTrends-blue)
 
 # Stocks-market-trends
-> This is a mobile-focused webapp to help people get the information updates at the stocks exchange market. It shows the real-time stock prices for various international companies like Apple, Microsoft and others. In addition, you can be able to check their annual financial statements history. Its data is consumed from[Financial modelling API](https://site.financialmodelingprep.com/developer/docs/). It is built with React, Redux and React-bootstrap and skeleton loader.
+> This is a mobile-focused web app to help people get the information updates at the stocks exchange market. It shows the real-time stock prices for various international companies like Apple, Microsoft and others which are most active at the stock market. In addition, you can be able to check their profile and their annual financial statements history. The application consumes data from[Financial modelling API](https://site.financialmodelingprep.com/developer/docs/). It is built with React, Redux and React-bootstrap.
 
-# Screenshoot
+# Screenshoots
 
 ## Mobile-First
 ![stock-market-trends](https://user-images.githubusercontent.com/90222110/158610453-7f7abc7e-06ec-4274-b16e-fcdb88a8dec8.png)
@@ -64,16 +64,45 @@ $ cd Stocks-market-trends
 #### Run project
 
 ```bash
-$ npm install
-$ npm build
-$ npm run test
-$ npm start
+$ npm install // To install all the dependencies
+$ npm start // To start the development server
 ```
 
 #### Open page in browser
 ```bash
 $ runs on http://localhost:3000/
 ```
+
+#### Run Tests
+```
+$ npm run test
+```
+
+#### Production
+
+```
+$ npm build
+```
+
+### API Documentation
+
+[Financial Modeling prep API Doc](https://site.financialmodelingprep.com/developer/docs/)
+
+**NOTE** You need to request API key. There is a free API key package.
+
+### Endpoints consumed
+ - Most Active companies at the stock market 
+    ```
+     /stock_market/actives
+    ```
+ - Company Profile
+    ```
+    /profile/{symbol}
+    ```
+ - Company Financial statements
+    ```
+    /income-statement/{symbol}
+    ```
 
 ## Author
 
